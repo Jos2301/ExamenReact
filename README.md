@@ -50,4 +50,4 @@ El sistema login es básico, y se puede ingresar con las siguientes credenciales
 
 - Contraseña:04963225
 
-Una vez autenticado, tendrás acceso al listado de empleados, con la opción de agregar nuevos empleados y gestionar imagenes.
+Una vez autenticado, tendrás acceso al listado de empleados, con la opción de agregar nuevos empleados y gestionar imagenes.# ExamenReact
