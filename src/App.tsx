@@ -1,26 +1,28 @@
+// src/App.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import EmployeesPage from './pages/EmployeesPage';
+import UploadPage from './pages/UploadPage';
+import Header from './components/Header';
+import { useAuth } from './context/AuthContext';
 
-function App() {
+const App: React.FC = () => {
+  const { isAuthenticated } = useAuth();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Navigate to={isAuthenticated ? "/employees" : "/login"} />} />
+        <Route path="/login" element={isAuthenticated ? <Navigate to="/employees" /> : <LoginPage />} />
+        <Route path="/employees" element={isAuthenticated ? <EmployeesPage /> : <Navigate to="/login" />} />
+        <Route path="/upload" element={isAuthenticated ? <UploadPage /> : <Navigate to="/login" />} />
+        {/* Si la ruta no existe: redirige a HOME o a Employees según la sesión */}
+        <Route path="*" element={<Navigate to={isAuthenticated ? "/employees" : "/"} />} />
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;

@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# Proyecto ExamenReact
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este es la realizacion del examen para Grupo Salinas, para gestionar empleados. Permite ver, buscar y agregar empleados, así como cargar imagenes mediante una interfaz de usuario sencilla.
 
-## Available Scripts
+## Requisitos Previos
 
-In the project directory, you can run:
+Asegurarse de tener instalados los siguientes programas en su máquina:
 
-### `npm start`
+- [Node.js](https://nodejs.org/) (v14 o superior)
+- [npm](https://www.npmjs.com/) (o [Yarn](https://yarnpkg.com/), si prefieres)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Instalación
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+1. Clona el repositorio:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+git clone https://github.com/tu-usuario/examenreact.git
+cd examenreacr
 
-### `npm run build`
+2. Instala las dependencias
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm install react react-dom react-router-dom axios react-calendar lucide-react typescript @types/react @types/react-dom @types/react-router-dom
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Variables de entorno
 
-### `npm run eject`
+Este proyecto requiere de una URL para acceder a la API de empleados. Asegúrate de establecer la siguiente variable de entorno en el archivo .env:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+REACT_APP_API_URL=https://6edeayi7ch.execute-api.us-east-1.amazonaws.com/v1/examen/employees/josafat_rodriguez
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Ejecución en desarrollo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Para ejecutar el proyecto en modo desarrollo, utiliza el siguiente comando:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+npm start
 
-## Learn More
+Esto abrirá el proyecto en http://localhost:3000.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Build de Producción
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Para crear una versión optimizada del proyecto para producción, utiliza:
+
+npm run build
+
+6. Login
+
+El sistema login es básico, y se puede ingresar con las siguientes credenciales:
+
+- Usuario:GrupoSalinas
+
+- Contraseña:04963225
+
+Una vez autenticado, tendrás acceso al listado de empleados, con la opción de agregar nuevos empleados y gestionar imagenes.
