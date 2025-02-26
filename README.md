@@ -34,13 +34,19 @@ Para ejecutar el proyecto en modo desarrollo, utiliza el siguiente comando:
 
 npm start
 
-Esto abrirá el proyecto en http://localhost:3000.
+Esto abrirá el proyecto en http://localhost:3000
 
 5. Build de Producción
 
 Para crear una versión optimizada del proyecto para producción, utiliza:
 
 npm run build
+
+npm install -g serve
+
+serve -s build
+
+Esto abrirá el proyecto en http://localhost:3000
 
 6. Login
 
